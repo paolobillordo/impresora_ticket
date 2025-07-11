@@ -41,7 +41,7 @@ app.post("/imprimir-pdf", async (req, res) => {
 
         // Imprimir con SumatraPDF
         const sumatraPath = `"C:\\Program Files\\SumatraPDF\\SumatraPDF.exe"`;
-        const printCommand = `${sumatraPath} -print-to-default -silent "${filePath}"`;
+        const printCommand = `${sumatraPath} -print-to-default -silent -print-settings "noscale" "${filePath}"`;
 
         exec(printCommand, (error, stdout, stderr) => {
             if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
