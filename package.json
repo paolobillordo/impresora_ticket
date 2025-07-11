@@ -1,0 +1,42 @@
+{
+  "name": "impresora-tickets",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.impresora.local",
+    "productName": "Servidor Impresora",
+    "files": [
+      "main.js",
+      "server.js"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Servidor Impresora"
+    }
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.6.0"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.6",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "escpos": "^3.0.0-alpha.6",
+    "escpos-usb": "^3.0.0-alpha.4",
+    "express": "^4.18.2",
+    "jimp": "^0.22.10",
+    "pdf-lib": "^1.17.1"
+  }
+}
